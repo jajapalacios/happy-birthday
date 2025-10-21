@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Love ❤️</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ff69b4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    animation: pop 1.5s ease-in-out;
+  }
+
+  p {
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 300px;
+    margin: 10px;
+  }
+
+  .heart {
+    position: absolute;
+    bottom: -10px;
+    color: #ff3366;
+    animation: floatUp 6s infinite ease-in;
+    font-size: 20px;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
+  }
+
+  @keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff69b4;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #ff85c2;
+  }
+</style>
+</head>
+<body>
+
+<h1>🎂 Happy Birthday, My Love 💖</h1>
+<p>to the sweetest boy i know, may we find each other in each life with endless love. you deserve only the best ! i love you </p>
+
+<button onclick="showMessage()">Click me 💌</button>
+
+<script>
+  function showMessage() {
+    alert("I love you endlessly, my birthday boy 💞");
+  }
+
+  function createHearts() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '💗';
+    document.body.appendChild(heart);
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 3 + Math.random() * 2 + 's';
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHearts, 300);
+</script>
+
+</body>
+</html>
