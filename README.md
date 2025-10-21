@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      background-color: #f8c6c6;
+      color: #5a1a1a;
+      font-family: 'Segoe Script', cursive;
+      text-align: center;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 100px;
+      color: #b33b3b;
+      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+    }
+
+    p {
+      font-size: 1.3em;
+      max-width: 600px;
+      margin: 20px auto;
+      line-height: 1.6;
+      color: #732424;
+      text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.7);
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #8a2d2d;
+      font-style: italic;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: #ff6b81;
+      font-size: 20px;
+      animation: floatHearts 10s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday</h1>
+  <p>To the sweetest boy I know, may we find each other in each life with endless love. You deserve only the best! I love you.</p>
+  <div class="signature">– from baby</div>
+
+  <script>
+    // Create floating hearts
+    const numHearts = 15;
+    for (let i = 0; i < numHearts; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 8 + Math.random() * 5 + "s";
+      heart.style.fontSize = 16 + Math.random() * 20 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 13000);
+    }
+
+    setInterval(() => {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 8 + Math.random() * 5 + "s";
+      heart.style.fontSize = 16 + Math.random() * 20 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 13000);
+    }, 1500);
+  </script>
+</body>
+</html>
